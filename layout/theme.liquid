@@ -32,6 +32,34 @@
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+       <script>
+     {% if template == 'product' %}
+      document.getElementById("ProductSubmitButton-template--18651269464367__main").onclick = function() {
+        var variantid = document.getElementById("vide");
+var attribute_value = variantid.getAttribute("value");
+        var myInt = parseInt(attribute_value);
+        if (myInt == 44857652642095){
+           function addItem(variantId, quantity) {
+    const result = fetch("/cart/add.json", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            id: variantId,
+            quantity: quantity
+        })
+    })
+}
+setTimeout(function(){
+  addItem(44823532175663, 1);
+}, 1000);
+
+        }
+      };  
+{% endif%}
+</script>
     {{ content_for_header }}
 
     {%- liquid
