@@ -59,12 +59,15 @@
         class="disabled"
       {% endif %}
     >
-    <div class="custom-color-swatch">
-    <label class="{% if option.name == "Color" %}color-swatch{% endif %}" style="{% if option.name == "Color" %}background-image:url({{img}});width:50px;height:50px;display:inline-block;background-position:center; background-color:{{value}}; border:1px solid #00000078;{% endif %}" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-{% if option.name == "Size" %}{{ value }}{% endif %}
+    
+    
+<label class="custom-color-swatch"  for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+<div class="{% if option.name == "Color" %}color-swatch{% endif %}" style="{% if option.name == "Color" %}background-image:url({{img}});width:50px;height:50px;display:inline-block;background-position:center; background-color:{{value}}; border:1px solid #00000078;{% endif %}">
+    {% if option.name == "Size" %}{{ value }}{% endif %}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
-    </label>
-    </div>
+ </div>   
+</label>
+   
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option
       value="{{ value | escape }}"
