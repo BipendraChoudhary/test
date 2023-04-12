@@ -52,7 +52,9 @@
       name="{{ option.name }}"
       value="{{ value | escape }}"
       form="{{ product_form_id }}"
-     
+      {% if option.selected_value == value %}
+        checked
+      {% endif %}
       {% if option_disabled %}
         class="disabled"
       {% endif %}
@@ -69,7 +71,9 @@
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option
       value="{{ value | escape }}"
-    
+      {% if option.selected_value == value %}
+        selected="selected"
+      {% endif %}
     >
       {% if option_disabled -%}
         {{- 'products.product.value_unavailable' | t: option_value: value -}}
