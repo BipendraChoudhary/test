@@ -337,22 +337,7 @@ get.click();
 }, 500);
   }
     </script>
-    <script>
-              function colorSwatchHandler(color) {
-                var colorOptionElm = document.querySelector('select option[value="' + color + '"]'),
-                    colorSpanElm = document.querySelector('span[title="' + color + '"]'),
-                    activeSwatch = document.querySelector('.color-swatch.active'),
-                    change = new Event('change', {bubbles: true, cancelable: false});
-
-                if (activeSwatch) {
-                  activeSwatch.className = activeSwatch.className.replace(' active', '');
-                }
-
-                colorOptionElm.selected = "selected";
-                colorSpanElm.className += ' active';
-                colorOptionElm.parentElement.dispatchEvent(change);
-              }
-    </script>
+    
 
   </body>
 </html>
