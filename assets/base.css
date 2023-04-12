@@ -3148,5 +3148,5 @@ details-disclosure > details {
   }
 }
 .product-form__input input[type=radio]:checked+label.color-swatch {
-    border: 5px solid green !important;
+        border: 4px solid grey!important;
 }
