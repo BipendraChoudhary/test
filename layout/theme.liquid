@@ -259,27 +259,7 @@
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
-{% unless product.has_only_default_variant %}
-<script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-      setTimeout(function(){
-      var target = document.getElementById("ProductSubmitButton-template--18651269464367__main");
-target.setAttribute("disabled", "disabled");
-        }, 2000);
-    });
 
-
-  var acc = document.querySelectorAll("fieldset.product-form__input label");
-var i;
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-  var target = document.getElementById("ProductSubmitButton-template--18651269464367__main");
-target.removeAttribute("disabled");
-  });
-}
-</script>
-{% endunless %}
     <script>
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
@@ -360,7 +340,26 @@ get.click();
   }
     </script>
     {% endif %}
+{% unless product.has_only_default_variant %}
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      setTimeout(function(){
+      var target = document.getElementById("ProductSubmitButton-template--18651269464367__main");
+target.setAttribute("disabled", "disabled");
+        }, 2000);
+    });
 
+  var acc = document.querySelectorAll("fieldset.product-form__input label");
+var i;
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+  var target = document.getElementById("ProductSubmitButton-template--18651269464367__main");
+target.removeAttribute("disabled");
+  });
+}
+</script>
+{% endunless %}
 
   </body>
 </html>
