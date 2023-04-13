@@ -259,7 +259,13 @@
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
-
+<script>
+document.querySelectorAll("fieldset.product-form__input label").onclick = function() {
+  var target = document.querySelectorAll("button.product-form__submit.button");
+target.removeAttribute("disabled");
+  alert();
+};
+</script>
     <script>
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
