@@ -259,6 +259,7 @@
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
+{% unless product.has_only_default_variant %}
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
       setTimeout(function(){
@@ -278,7 +279,7 @@ target.removeAttribute("disabled");
   });
 }
 </script>
-{% if product.has_only_default_variant %} asas{% endif %}
+{% endunless %}
     <script>
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
