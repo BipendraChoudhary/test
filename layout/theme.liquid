@@ -267,11 +267,19 @@ alert(1);
 target.setAttribute("disabled", "disabled");
         }, 2000);
     });
-document.querySelectorAll("fieldset.product-form__input label").onclick = function() {
+
+
+  var acc = document.querySelectorAll("fieldset.product-form__input label");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
   var target = document.getElementById("ProductSubmitButton-template--18651269464367__main");
 target.removeAttribute("disabled");
   alert();
-};
+  });
+}
 </script>
     <script>
       window.shopUrl = '{{ request.origin }}';
