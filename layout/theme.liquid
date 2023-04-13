@@ -260,6 +260,10 @@
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
 <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var target = document.querySelectorAll("button.product-form__submit");
+target.removeAttribute("disabled");
+    });
 document.querySelectorAll("fieldset.product-form__input label").onclick = function() {
   var target = document.querySelectorAll("button.product-form__submit.button");
 target.removeAttribute("disabled");
