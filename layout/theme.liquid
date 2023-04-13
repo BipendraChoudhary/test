@@ -261,9 +261,11 @@
     </ul>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-      alert(1);
+      setTimeout(function(){
+alert(1);
       var target = document.querySelectorAll("button.product-form__submit");
 target.setAttribute("disabled", "disabled");
+        }, 2000);
     });
 document.querySelectorAll("fieldset.product-form__input label").onclick = function() {
   var target = document.querySelectorAll("button.product-form__submit.button");
