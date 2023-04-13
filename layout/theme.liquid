@@ -330,6 +330,8 @@ target.removeAttribute("disabled");
 {% endif%}
 </script>
 {% comment %}------- Remove Additional Product by Remove Specific Product JS-------- {% endcomment %}
+{% if template == 'cart' %}
+
     <script>
       var link = document.getElementById("itemid-44857652642095"); //  Find the link element
   link.onclick = myAlert; // Add onclick function to element
@@ -343,7 +345,8 @@ get.click();
 }, 500);
   }
     </script>
-    
+    {% endif %}
+
 
   </body>
 </html>
