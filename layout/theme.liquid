@@ -278,6 +278,7 @@ target.removeAttribute("disabled");
   });
 }
 </script>
+{% if product.has_only_default_variant %} asas{% endif %}
     <script>
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
